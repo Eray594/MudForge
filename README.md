@@ -39,8 +39,8 @@ builder.Services.AddThemeServices(new ThemeServiceConfiguration
 await builder.Build().RunAsync();
 ```
 
-#### 2. **Theme Switcher Example:**
-To allow users to switch between Light and Dark mode, use the following button in your Blazor components:
+#### 2. **Add Components:**
+Add the following components to your app.razor:
 
 ```razor
 @page "/"
@@ -59,13 +59,16 @@ MudForge works seamlessly with MudBlazor. You can use the MudBlazor components a
 Example of a simple UI with MudBlazor and MudForge:
 
 ```razor
-<MudThemeProvider Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.Provider.IsDarkMode">
-    <MudDialogProvider/>
-    <MudSnackbarProvider/>
-    <MudMainContent>
-        @Body
-    </MudMainContent>
-</MudThemeProvider>
+@inject MudThemeService ThemeService
+
+<MudThemeProvider Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.IsDarkMode"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+@code {
+    protected override void OnInitialized()
+        => ThemeService.OnThemeChanged += StateHasChanged;
+}
 ```
 
 ### **Configuration Options:**
