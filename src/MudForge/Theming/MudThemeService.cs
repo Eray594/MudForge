@@ -1,7 +1,7 @@
 using Blazored.LocalStorage;
 using MudBlazor;
 
-namespace MudForge.Services.Theming;
+namespace MudForge.Theming;
 
 /// <summary>
 /// Manages the application's theme settings, including dark mode state and local storage persistence.

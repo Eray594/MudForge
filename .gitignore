@@ -74,10 +74,12 @@ publish/
 *.azurePubxml
 
 # NuGet Packages Directory
-## TODO: If you have NuGet Package Restore enabled, uncomment the next line
 packages/
-## TODO: If the tool you use requires repositories.config, also uncomment the next line
 !packages/repositories.config
+.nuget/
+.nuget/packages/
+.nuget/cache/
+.nuget/fallbackpackages/
 
 # Windows Azure Build Output
 csx/
@@ -150,7 +152,6 @@ _NCrunch*
 **/.idea/**/dynamic.xml
 
 # Rider
-# Rider auto-generates .iml files, and contentModel.xml
 **/.idea/**/*.iml
 **/.idea/**/contentModel.xml
 **/.idea/**/modules.xml
@@ -166,3 +167,36 @@ _UpgradeReport_Files/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Rider (JetBrains)
+.idea/
+.idea/*/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/dictionaries/
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/modules.xml
+.idea/contentModel.xml
+
+# Visual Studio Code
+.vscode/
+
+# .NET Build-Ordner
+bin/
+obj/
+*.lock.json
+*.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+
+# If `dotnet restore` is used
+project.lock.json
+project.nuget.cache

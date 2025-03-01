@@ -1,7 +1,7 @@
 using Blazored.LocalStorage;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MudForge.Services.Theming;
+namespace MudForge.Theming;
 
 /// <summary>
 /// Provides extension methods for registering the MudThemeService in the DI container.

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudForge.Services", "MudForge.Services\MudForge.Services.csproj", "{B5A29E50-DA29-422F-BDD2-80DE00E51B58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudForge", "MudForge\MudForge.csproj", "{B5A29E50-DA29-422F-BDD2-80DE00E51B58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

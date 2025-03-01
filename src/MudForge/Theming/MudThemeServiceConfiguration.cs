@@ -1,6 +1,6 @@
 using MudBlazor;
 
-namespace MudForge.Services.Theming;
+namespace MudForge.Theming;
 
 /// <summary>
 /// Configuration class for the MudThemeService. 
