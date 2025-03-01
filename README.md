@@ -74,6 +74,8 @@ Example of a simple UI with MudBlazor and MudForge:
         => ThemeService.OnThemeChanged += StateHasChanged;
 }
 ```
+[!NOTE]
+It doesn't matter whether the MudBlazor components are stored in App.razor or in your layout. It is only important that the service specifies the configuration
 
 ### **Configuration Options:**
 #### **ThemeServiceConfiguration:**
