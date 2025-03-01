@@ -57,43 +57,7 @@ Add the following components to your app.razor:
 }
 ```
 
-#### 3. **MudBlazor Integration:**
-MudForge works seamlessly with MudBlazor. You can use the MudBlazor components as usual, and MudForge services will handle the theming.
-
-Example of a simple UI with MudBlazor and MudForge:
-
-```razor
-@inject MudThemeService ThemeService
-
-<MudThemeProvider Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.IsDarkMode"/>
-<MudDialogProvider/>
-<MudSnackbarProvider/>
-
-@code {
-    protected override void OnInitialized()
-        => ThemeService.OnThemeChanged += StateHasChanged;
-}
-```
 [!NOTE]
 It doesn't matter whether the MudBlazor components are stored in App.razor or in your layout. It is only important that the service specifies the configuration
-
-### **Configuration Options:**
-#### **ThemeServiceConfiguration:**
-- **IsDarkMode**: A boolean value that defines if the app starts in dark mode (default is `false`).
-- **LocalStorageKey**: The key used to save the theme preference in `localStorage`.
-- **Theme**: A `MudTheme` object that defines the visual theme settings for the app.
-
-### **Contributing:**
-MudForge is an open-source project, and contributions are welcome. If you'd like to contribute:
-
-1. Open an issue or submit a pull request in the GitHub repository.
-2. Follow the contributing guidelines and coding standards.
-
-You can find the repository here: [MudForge GitHub Repository](https://github.com/Eray594/MudForge).
-
-### **License:**
-MudForge is licensed under the **MIT License**.
-
----
 
 This documentation provides a clear and comprehensive introduction to **MudForge**, including installation instructions, usage examples, configuration options, and contribution guidelines. It's perfect for developers looking to integrate theming into their Blazor applications quickly and efficiently.
