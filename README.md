@@ -12,7 +12,7 @@ You can easily install **MudForge** via **NuGet**.
 dotnet add package MudForge
 ```
 
-#### Using Visual Studio:
+#### Using Visual Studio/Rider:
 1. Right-click on your project in **Solution Explorer**.
 2. Click **Manage NuGet Packages**.
 3. Search for **MudForge** and click **Install**.
