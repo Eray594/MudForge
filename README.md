@@ -43,7 +43,7 @@ await builder.Build().RunAsync();
 Add the following components to your app.razor:
 
 > [!NOTE]
-> It doesn't matter whether the MudBlazor components are stored in App.razor or in your layout. It is only important that the service specifies the configuration.
+> It doesn't matter whether the MudBlazor components are stored in `app.razor` or in your `MainLayout.razor`. It is only important that the service specifies the configuration.
 
 ```razor
 @inject MudThemeService ThemeService
