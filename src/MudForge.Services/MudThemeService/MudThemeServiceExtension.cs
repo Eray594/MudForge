@@ -3,17 +3,23 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MudForge.Services.MudThemeService;
 
+/// <summary>
+/// Provides extension methods for registering the MudThemeService in the DI container.
+/// </summary>
 public static class MudThemeServiceExtension
 {
-    public static void AddMudThemeServices(
-        this IServiceCollection services, MudThemeServiceConfiguration mudThemeServiceConfiguration)
+    /// <summary>
+    /// Adds MudThemeService and its dependencies to the service collection.
+    /// </summary>
+    /// <param name="services">The IServiceCollection instance.</param>
+    /// <param name="configuration">The configuration settings for the theme service.</param>
+    public static IServiceCollection AddMudThemeServices(
+        this IServiceCollection services, MudThemeServiceConfiguration configuration)
     {
         services.AddBlazoredLocalStorage();
-        services.AddScoped<MudThemeService>(x =>
-        {
-            var localStorage = x.GetService<ILocalStorageService>();
+        services.AddScoped<MudThemeService>(sp =>
+            new MudThemeService(sp.GetRequiredService<ILocalStorageService>(), configuration));
 
-            return new MudThemeService(localStorage, mudThemeServiceConfiguration);
-        });
+        return services;
     }
 }

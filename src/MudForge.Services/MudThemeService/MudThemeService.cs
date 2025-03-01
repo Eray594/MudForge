@@ -3,49 +3,75 @@ using MudBlazor;
 
 namespace MudForge.Services.MudThemeService;
 
+/// <summary>
+/// Manages the application's theme settings, including dark mode state and local storage persistence.
+/// </summary>
 public class MudThemeService
 {
     private readonly MudThemeServiceConfiguration _configuration;
+    private readonly ILocalStorageService _localStorageService;
     private readonly string _localStorageKey;
 
-    private readonly ILocalStorageService _localStorageService;
     public readonly MudTheme Theme;
-    public MudThemeProvider Provider = new();
 
+    public bool IsDarkMode;
+
+    /// <summary>
+    /// Event triggered when the theme mode changes.
+    /// </summary>
+    public event Action? OnThemeChanged;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MudThemeService"/> class.
+    /// </summary>
+    /// <param name="localStorageService">The local storage service for persisting theme settings.</param>
+    /// <param name="configuration">The theme configuration settings.</param>
     public MudThemeService(ILocalStorageService localStorageService, MudThemeServiceConfiguration configuration)
     {
         _localStorageService = localStorageService;
+        _configuration = configuration;
         Theme = configuration.Theme;
         _localStorageKey = configuration.LocalStorageKey;
-        _configuration = configuration;
-        _ = Task.Run(TrySetThemeByLocalStorage);
+
+        Task.Run(InitializeThemeAsync);
     }
 
-    public Palette CurrentPalette => (Provider.IsDarkMode) ? Theme.PaletteDark : Theme.PaletteLight;
+    /// <summary>
+    /// Gets the current palette based on the dark mode setting.
+    /// </summary>
+    public Palette CurrentPalette => IsDarkMode ? Theme.PaletteDark : Theme.PaletteLight;
 
-    public event Action? OnThemeChanged;
-
+    /// <summary>
+    /// Toggles the dark mode setting and persists it in local storage.
+    /// </summary>
     public async Task ToggleAsync()
     {
-        Provider.IsDarkMode = !Provider.IsDarkMode;
-        await _localStorageService.SetItemAsync(_localStorageKey, Provider.IsDarkMode);
+        IsDarkMode = !IsDarkMode;
         OnThemeChanged?.Invoke();
+        await _localStorageService.SetItemAsync(_localStorageKey, IsDarkMode);
     }
 
-    private async Task TrySetThemeByLocalStorage()
+    /// <summary>
+    /// Initializes the theme setting by checking local storage or falling back to default configuration.
+    /// </summary>
+    private async Task InitializeThemeAsync()
     {
-        var hasStorage = await _localStorageService.ContainKeyAsync(_localStorageKey);
-        if (hasStorage)
-            try
+        try
+        {
+            if (await _localStorageService.ContainKeyAsync(_localStorageKey))
             {
-                Provider.IsDarkMode = await _localStorageService.GetItemAsync<bool>(_localStorageKey);
-                OnThemeChanged?.Invoke();
+                IsDarkMode = await _localStorageService.GetItemAsync<bool>(_localStorageKey);
             }
-            catch (Exception e)
+            else
             {
-                Provider.IsDarkMode = false;
+                IsDarkMode = _configuration.IsDarkMode;
             }
-        else
-            Provider.IsDarkMode = _configuration.IsDarkMode;
+        }
+        catch
+        {
+            IsDarkMode = _configuration.IsDarkMode;
+        }
+
+        OnThemeChanged?.Invoke();
     }
 }
