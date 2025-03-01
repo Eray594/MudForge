@@ -1,2 +1,2 @@
 # MudForge
-MudForge ist eine Open-Source-Bibliothek, die erweiterte UI-Komponenten und Entwicklungswerkzeuge für MudBlazor bereitstellt. Ziel ist es, die Entwicklung von Blazor-Anwendungen zu beschleunigen und Entwicklern leistungsstarke, flexible und wiederverwendbare Lösungen anzubieten.
+MudForge is an open source library that provides advanced UI components and development tools for MudBlazor. It aims to accelerate the development of Blazor applications and provide developers with powerful, flexible and reusable solutions.
