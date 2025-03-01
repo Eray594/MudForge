@@ -1,6 +1,3 @@
-Hier ist der vollständige **README.md**-Code:
-
-```markdown
 # MudForge
 
 MudForge is an open-source library designed to simplify the implementation of common tasks in Blazor applications, specifically focused on **theming**. Built on top of MudBlazor, it helps developers quickly integrate a robust theming system into their applications with minimal effort.
@@ -20,7 +17,6 @@ You can easily install **MudForge** via NuGet.
 
 ```bash
 dotnet add package MudForge
-```
 
 ### Using Visual Studio:
 
