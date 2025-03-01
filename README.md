@@ -43,14 +43,16 @@ await builder.Build().RunAsync();
 Add the following components to your app.razor:
 
 ```razor
-@page "/"
 @inject MudThemeService ThemeService
 
-<MudStack Justify="Justify.Center" Row="true">
-    <button @onclick="ThemeService.ToggleAsync" class="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
-        Switch to @(ThemeService.IsDarkMode ? "Light Mode" : "Dark Mode")
-    </button>
-</MudStack>
+<MudThemeProvider Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.IsDarkMode"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+@code {
+    protected override void OnInitialized()
+        => ThemeService.OnThemeChanged += StateHasChanged;
+}
 ```
 
 #### 3. **MudBlazor Integration:**
