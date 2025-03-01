@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudForge.Services", "MudForge.Services\MudForge.Services.csproj", "{B5A29E50-DA29-422F-BDD2-80DE00E51B58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudForge.Example", "MudForge.Example\MudForge.Example.csproj", "{9B32782D-B552-4661-8C79-BFDCD5B88C52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5A29E50-DA29-422F-BDD2-80DE00E51B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A29E50-DA29-422F-BDD2-80DE00E51B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A29E50-DA29-422F-BDD2-80DE00E51B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A29E50-DA29-422F-BDD2-80DE00E51B58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B32782D-B552-4661-8C79-BFDCD5B88C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B32782D-B552-4661-8C79-BFDCD5B88C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B32782D-B552-4661-8C79-BFDCD5B88C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B32782D-B552-4661-8C79-BFDCD5B88C52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

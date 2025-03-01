@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+@inject MudThemeService ThemeService
+
+<MudLayout>
+    <MudAppBar>
+        <MudToggleIconButton ToggledChanged="ToggleThemeAsync" Color="Color.Inherit" Icon="@Icons.Material.Filled.DarkMode" ToggledIcon="@Icons.Material.Filled.LightMode"></MudToggleIconButton>
+    </MudAppBar>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ThemeService.OnThemeChanged += StateHasChanged;
+    }
+
+    private async Task ToggleThemeAsync()
+    {
+        await ThemeService.ToggleAsync();
+    }
+
+}

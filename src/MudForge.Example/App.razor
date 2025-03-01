@@ -1,0 +1,26 @@
+﻿@inject MudThemeService ThemeService
+    <MudThemeProvider @ref="ThemeService.Provider" Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.Provider.IsDarkMode"/>
+<MudDialogProvider/>
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@code {
+
+    private static MudThemeProvider ThemeProvider { get; set; } = new MudThemeProvider();
+
+    public static void ChangeState()
+    {
+        ThemeProvider.IsDarkMode = !ThemeProvider.IsDarkMode;
+    }
+}
