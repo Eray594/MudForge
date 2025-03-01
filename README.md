@@ -2,9 +2,7 @@ MudForge is an open-source library designed to simplify the implementation of **
 
 ### **MudForge Features:**
 - **Theming**: Simplifies the implementation of the MudBlazor theming system.
-- **Light and Dark Mode**: Easily toggle between Light and Dark modes in your Blazor application.
-- **Customizable Themes**: Supports theme customization to meet the design requirements of your application.
-- **MudBlazor Support**: Fully integrates with MudBlazor to enhance the UI experience.
+- **Localization (Soon)**: Offers easy-to-use localization services to manage different languages in your Blazor applications.
 
 ### **Installation:**
 You can easily install **MudForge** via **NuGet**.
