@@ -42,6 +42,9 @@ await builder.Build().RunAsync();
 #### 2. **Add Components:**
 Add the following components to your app.razor:
 
+> [!NOTE]
+> It doesn't matter whether the MudBlazor components are stored in App.razor or in your layout. It is only important that the service specifies the configuration.
+
 ```razor
 @inject MudThemeService ThemeService
 
@@ -56,9 +59,6 @@ Add the following components to your app.razor:
         => ThemeService.OnThemeChanged += StateHasChanged;
 }
 ```
-
-> [!NOTE]
-> It doesn't matter whether the MudBlazor components are stored in App.razor or in your layout. It is only important that the service specifies the configuration.
 
 
 This documentation provides a clear and comprehensive introduction to **MudForge**, including installation instructions, usage examples, configuration options, and contribution guidelines. It's perfect for developers looking to integrate theming into their Blazor applications quickly and efficiently.
