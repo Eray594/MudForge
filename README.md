@@ -60,5 +60,13 @@ Add the following components to your `app.razor`:
 }
 ```
 
+#### 3. **Change to Light/Dark Mode**  
+With the `ToggleAsync` method in the **MudThemeService**, you can easily switch between Light & Dark Mode.
+
+```razor
+@inject MudThemeService ThemeService
+<MudButton OnClick="ThemeService.ToggleAsync">Click Me!</MudButton>
+```
+
 
 This documentation provides a clear and comprehensive introduction to **MudForge**, including installation instructions, usage examples, configuration options, and contribution guidelines. It's perfect for developers looking to integrate theming into their Blazor applications quickly and efficiently.
