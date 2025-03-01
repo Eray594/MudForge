@@ -1,0 +1,9 @@
+﻿@page "/"
+@inject MudThemeService ThemeService
+
+<MudStack Justify="Justify.Center" Row="true">
+    <MudButton Ripple="false" Class="mud-typography-body1" Variant="Variant.Filled" DropShadow="false"
+               Color="Color.Primary" OnClick="ThemeService.ToggleAsync">
+        Switch to @(ThemeService.IsDarkMode ? "Light Mode" : "Dark Mode")
+    </MudButton>
+</MudStack>

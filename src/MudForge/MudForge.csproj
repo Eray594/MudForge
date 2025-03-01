@@ -6,6 +6,17 @@
         <Nullable>enable</Nullable>
         <AssemblyName>MudForge</AssemblyName>
         <RootNamespace>MudForge</RootNamespace>
+
+        <!-- NuGet Metadaten -->
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>MudForge</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Eray</Authors>
+        <Company>Eray</Company>
+        <Description>Essential services for Blazor and MudBlazor, simplifying theming, localization, and more.</Description>
+        <PackageTags>Blazor, MudBlazor, Theming, Localization, Development</PackageTags>
+        <RepositoryUrl>https://github.com/Eray594/MudForge</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
