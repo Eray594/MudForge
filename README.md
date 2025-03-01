@@ -49,6 +49,8 @@ Add the following components to your app.razor:
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
+....
+
 @code {
     protected override void OnInitialized()
         => ThemeService.OnThemeChanged += StateHasChanged;
