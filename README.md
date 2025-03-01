@@ -40,7 +40,7 @@ await builder.Build().RunAsync();
 ```
 
 #### 2. **Add Components:**
-Add the following components to your app.razor:
+Add the following components to your `app.razor`:
 
 > [!NOTE]
 > It doesn't matter whether the MudBlazor components are stored in `app.razor` or in your `MainLayout.razor`. It is only important that the service specifies the configuration.
