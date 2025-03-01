@@ -17,12 +17,10 @@ dotnet add package MudForge
 2. Click **Manage NuGet Packages**.
 3. Search for **MudForge** and click **Install**.
 
-
-### **Usage:**
-
 > [!NOTE]
 > To perform these steps it is assumed that you have successfully installed MudBlazor on your project
 
+### **Usage:**
 Once the package is installed, you can start using the theming services provided by MudForge.
 
 #### 1. **Theming Setup:**
