@@ -40,7 +40,7 @@ using MudForge.Theming;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 // Add MudForge Theming Service
-builder.Services.AddThemeServices(new ThemeServiceConfiguration
+builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
     IsDarkMode = true, // Default theme set to Dark Mode
     LocalStorageKey = "theme_mode", // Stores user preference in localStorage
