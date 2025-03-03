@@ -34,12 +34,12 @@ using MudForge.Theming;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-// 🎨 Add MudForge Theming Service
+// Add MudForge Theming Service
 builder.Services.AddThemeServices(new ThemeServiceConfiguration
 {
-    IsDarkMode = true, // 🌙 Default theme set to Dark Mode
-    LocalStorageKey = "theme_mode", // 💾 Stores user preference
-    Theme = new MudTheme() // 🎭 Provide MudBlazor theme configuration
+    IsDarkMode = true, // Default theme set to Dark Mode
+    LocalStorageKey = "theme_mode", // Stores user preference
+    Theme = new MudTheme() // Provide MudBlazor theme configuration
 });
 
 await builder.Build().RunAsync();
