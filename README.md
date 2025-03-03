@@ -10,8 +10,8 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 
 
 ## 🎨 **Features**
-- 🎭 **Theming**: Simplified implementation of the MudBlazor theming system.
-- 🌍 **Localization (Coming Soon)**: Provides easy-to-use services for managing multiple languages in Blazor applications.
+- **Theming**: Simplified implementation of the MudBlazor theming system.
+- **Localization (Coming Soon)**: Provides easy-to-use services for managing multiple languages in Blazor applications.
 
 > ⚠️ **Important**: Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
 
@@ -25,9 +25,9 @@ dotnet add package MudForge
 ```
 
 ### **Using Visual Studio/Rider**
-1. 🖱️ Right-click your project in **Solution Explorer**.
-2. 🛠️ Select **Manage NuGet Packages**.
-3. 🔎 Search for **MudForge** and click **Install**.
+1. Right-click your project in **Solution Explorer**.
+2. Select **Manage NuGet Packages**.
+3. Search for **MudForge** and click **Install**.
 
 ---
 
