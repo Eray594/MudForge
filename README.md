@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/466a174f-5e92-4e01-8824-8fca11a0a203" alt="Variant">
+  <img height="120px" width="120px" src="https://github.com/user-attachments/assets/466a174f-5e92-4e01-8824-8fca11a0a203" alt="Variant">
 </p>
 
 # MudForge 🚀
