@@ -50,9 +50,7 @@ builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 await builder.Build().RunAsync();
 ```
 
-> ℹ️ **Note:** The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
-
-
+> 🔹 **Note:** The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
 
 ---
 
@@ -73,9 +71,7 @@ Modify your components using the `MudThemeService` by adding the following code 
 ```
 This ensures that your components dynamically adapt to theme changes managed by the MudThemeService.
 
-> ℹ️ **Note:** It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
-
-
+> 🔹 **Note:** It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
 
 ---
 
