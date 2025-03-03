@@ -12,7 +12,7 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 - 🎭 **Theming**: Simplified implementation of the MudBlazor theming system.
 - 🌍 **Localization (Coming Soon)**: Provides easy-to-use services for managing multiple languages in Blazor applications.
 
-> ⚠️ **Important**: Before using MudForge, ensure that **MudBlazor** is successfully installed in your project.
+> ⚠️ **Important**: Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
 
 ---
 
