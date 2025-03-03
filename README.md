@@ -29,7 +29,7 @@ dotnet add package MudForge
 
 ---
 
-## 🏗️ **Usage**
+## 👋 **Getting Started**
 
 ### **1. Theming Setup**
 Add the following lines to `Program.cs` to configure MudForge's theming services:
