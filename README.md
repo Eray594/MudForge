@@ -2,7 +2,7 @@
 
 MudForge is an **open-source library** designed to simplify **theming** in Blazor applications. Built on **MudBlazor**, it enables developers to quickly integrate a powerful and customizable theming system into their Blazor projects.
 
-![Variant 1](https://github.com/user-attachments/assets/9ac52938-d427-46d1-95d1-28dd35707409)
+![Variant](https://github.com/user-attachments/assets/cd4132df-ef45-4c7a-9c8f-dfab644f7f2f)
 
 
 ## 🎨 **Features**
