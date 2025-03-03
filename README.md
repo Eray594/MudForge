@@ -8,8 +8,8 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 
 
 ## 🎨 **Features**
-- **Theming**: Simplified implementation of the MudBlazor theming system.
-- **Localization (Coming Soon)**: Provides easy-to-use services for managing multiple languages in Blazor applications.
+- ✅**Theming**: Simplified implementation of the MudBlazor theming system.
+- ❌**Localization (Coming Soon)**: Provides easy-to-use services for managing multiple languages in Blazor applications.
 
 > ⚠️ **Important**: Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
 
@@ -50,15 +50,12 @@ builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 await builder.Build().RunAsync();
 ```
 
-> 🔹 **Note:** The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
+> ℹ️ **Note:** The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
 
 ---
 
 ### **2. Configure Components**
 Modify your components using the `MudThemeService` by adding the following code to `App.razor` or `MainLayout.razor`:
-
-> ℹ️ **Note:** It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
-
 
 ```razor
 @inject MudThemeService ThemeService
@@ -73,6 +70,8 @@ Modify your components using the `MudThemeService` by adding the following code 
 }
 ```
 This ensures that your components dynamically adapt to theme changes managed by the MudThemeService.
+
+> ℹ️ **Note:** It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
 
 ---
 
