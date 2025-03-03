@@ -38,12 +38,14 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddThemeServices(new ThemeServiceConfiguration
 {
     IsDarkMode = true, // Default theme set to Dark Mode
-    LocalStorageKey = "theme_mode", // Stores user preference
+    LocalStorageKey = "theme_mode", // Stores user preference in localStorage
     Theme = new MudTheme() // Provide MudBlazor theme configuration
 });
 
 await builder.Build().RunAsync();
 ```
+
+> 🔹 **Note:** The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
 
 ---
 
@@ -75,8 +77,10 @@ With the `ToggleAsync` method in **MudThemeService**, you can easily switch betw
 <MudButton OnClick="ThemeService.ToggleAsync">Toggle Theme</MudButton>
 ```
 
+> 🔹 **Note:** The selected theme is automatically stored in the **localStorage**, so the user’s preference is preserved even after a page reload or restart of the application.
+
 ---
 
 ## 🎯 **Conclusion**
-MudForge provides a **simple yet powerful** way to implement theming in Blazor applications using MudBlazor. The library is **flexible, customizable**, and integrates **seamlessly** into existing Blazor projects.
+MudForge provides a **simple yet powerful** way to implement theming in Blazor applications using MudBlazor. The library is **flexible, customizable**, and integrates **seamlessly** into existing Blazor projects. The theme preference is stored persistently in the **localStorage**, ensuring a consistent user experience across sessions.
 
