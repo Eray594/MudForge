@@ -1,6 +1,5 @@
-<p align="center">
-  <img height="120px" width="120px" src="https://github.com/user-attachments/assets/466a174f-5e92-4e01-8824-8fca11a0a203" alt="Variant">
-</p>
+![Variant (1)](https://github.com/user-attachments/assets/08bee777-7be0-4001-b8a2-05f75dd321c1)
+
 
 # MudForge 🔨
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
