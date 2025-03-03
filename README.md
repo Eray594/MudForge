@@ -1,4 +1,4 @@
-<img height="120px" width="120px" src="https://github.com/user-attachments/assets/08bee777-7be0-4001-b8a2-05f75dd321c1" alt="Variant">
+<img height="80" width="80" src="https://github.com/user-attachments/assets/08bee777-7be0-4001-b8a2-05f75dd321c1" alt="Variant">
 
 # MudForge 🔨
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
