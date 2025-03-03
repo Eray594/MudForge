@@ -2,7 +2,7 @@
   <img height="120px" width="120px" src="https://github.com/user-attachments/assets/466a174f-5e92-4e01-8824-8fca11a0a203" alt="Variant">
 </p>
 
-# MudForge 🚀
+# MudForge 🔨
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
