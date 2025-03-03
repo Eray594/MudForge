@@ -54,8 +54,11 @@ await builder.Build().RunAsync();
 
 ---
 
-### **2. Add Components**
-Add the following components to `App.razor` or `MainLayout.razor`:
+### **2. Configure Components**
+Modify your components using the `MudThemeService` by adding the following code to `App.razor` or `MainLayout.razor`:
+
+> ℹ️ **Note:** It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
+
 
 ```razor
 @inject MudThemeService ThemeService
@@ -69,8 +72,7 @@ Add the following components to `App.razor` or `MainLayout.razor`:
         => ThemeService.OnThemeChanged += StateHasChanged;
 }
 ```
-
-> ℹ️ **Note:** It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
+This ensures that your components dynamically adapt to theme changes managed by the MudThemeService.
 
 ---
 
