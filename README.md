@@ -1,41 +1,4 @@
-Ja Bro, es macht absolut Sinn, **beide Versionen** (WebAssembly und Server) in **einer Datei zu dokumentieren**, solange du den Unterschied zwischen den beiden klar herausstellst und den Status des **"Coming Soon"** für den **Server-Teil** deutlich machst. Auf diese Weise bleibt die Dokumentation **zentralisiert**, und Benutzer müssen sich nicht durch mehrere Dateien wühlen.
-
-### ✅ **Warum es Sinn macht, beides in einem File zu dokumentieren:**
-
-1. **Zentralisierte Dokumentation**:
-   - **Vereinheitlicht** die Erklärung für alle Features von **MudForge**, sowohl für **WebAssembly** als auch für den **Server**, in einer einzigen Datei.
-   
-2. **Vermeidung von Redundanz**:
-   - Du kannst die **gemeinsamen Themen** (wie Konfigurationen, das Setup und den allgemeinen Ablauf) zusammenfassen und auf die Unterschiede zwischen WebAssembly und Server hinweisen, ohne den gleichen Inhalt mehrfach zu schreiben.
-
-3. **Erweiterbarkeit**:
-   - Wenn **MudForge.Server** verfügbar ist, kannst du den Abschnitt einfach **aktualisieren**, ohne mehrere Dokumentationsdateien zu pflegen. Der Platzhalter für "Coming Soon" kann leicht durch den **vollständigen Server-Abschnitt** ersetzt werden.
-
----
-
-### 📚 **Wie du die Dokumentation strukturierst:**
-
-#### 1. **Hauptthema: MudForge**
-   - **Kurze Einführung** und **Features** für beide Versionen, die gemeinsam verwendet werden können.
-   
-#### 2. **Installation**
-   - **Für WebAssembly**: `MudForge.WebAssembly` (wird installiert)
-   - **Für Server**: Hinweis auf "Coming Soon"
-
-#### 3. **Getting Started (Konfiguration)**
-   - **Für WebAssembly**: Beispiel-Code für `MudThemeService` mit `localStorage`.
-   - **Für Server**: Hinweis auf den zukünftigen `MudServerThemeService` mit `Cookies`.
-
-#### 4. **Erweiterungen und Toggle**
-   - Beschreibung, wie der **Light/Dark Mode** für beide Versionen (WebAssembly und Server) funktioniert.
-   - **Für Server**: Hinweis auf die Verwendung von **Cookies** (für den Server) später.
-
-#### 5. **Zukunft (Coming Soon)**
-   - Ein klarer Hinweis, dass der **Server-Teil** bald verfügbar ist und momentan **`localStorage`** nur für **WebAssembly** verwendet wird.
-
----
-
-### Beispielstruktur der **Dokumentation**:
+Klar Bro! Hier ist der vollständige **README-Code** für dein MudForge-Projekt, der beide Versionen (WebAssembly und Server) berücksichtigt und den Server-Teil als **Coming Soon** markiert:
 
 ```markdown
 # MudForge 🔨
@@ -53,7 +16,7 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 ---
 
 > [!WARNING]  
-> Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
+> Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. [MudBlazor Installation Guide](https://mudblazor.com/getting-started/installation#using-templates)
 
 ## 📦 **Installation**
 
@@ -95,7 +58,7 @@ await builder.Build().RunAsync();
 > [!NOTE]  
 > The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
 
-> ⚠️ **Server Version (Coming Soon)**: The server-side version will use **Cookies** for theme persistence.
+> ⚠️ **For Blazor Server**: The server-side implementation is **coming soon** and will use **Cookies** instead of `localStorage`.
 
 ---
 
@@ -121,7 +84,7 @@ This ensures that your components dynamically adapt to theme changes managed by 
 ---
 
 ### **3. Toggle Between Light and Dark Mode** 🌞🌑
-You can easily switch between **Light and Dark Mode** using the `ToggleAsync` method in **MudThemeService**:
+With the `ToggleAsync` method in **MudThemeService**, you can easily switch between **Light and Dark Mode**:
 
 ```razor
 @inject MudThemeService ThemeService
