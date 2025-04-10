@@ -11,7 +11,6 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 - ✅ **Theming**: Simplified implementation of the MudBlazor theming system.
 - ✅ **WebAssembly**: Full support for theming in **Blazor WebAssembly** applications using **`localStorage`** for theme persistence.
 - ❌ **Server-Side** (Coming Soon): Server-side theming with **Cookies** for persistent theme preference.
-
 ---
 
 > [!WARNING]  
@@ -21,8 +20,6 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 ### **Using .NET CLI**
 bash
 dotnet add package MudForge
-> ⚠️ **For Server Version**: The server-side version is **Coming Soon**.  
-> Currently, **MudForge** is only available for **Blazor WebAssembly**.
 
 ### **Using Visual Studio/Rider**
 1. Right-click your project in **Solution Explorer**.
