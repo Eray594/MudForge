@@ -17,7 +17,7 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 > Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
 
 ## 📦 **Installation**
-### **Using .NET CLI**
+### **Using .NET CLI (WebAssembly)**
 ```bash
 dotnet add package MudForge.WebAssembly
 ```
