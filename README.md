@@ -31,7 +31,7 @@ dotnet add package MudForge.WebAssembly
 
 ---
 
-## 👋 **Getting Started**
+## 👋 **Getting Started (WebAssembly)**
 
 ### **1. Theming Setup**
 Add the following lines to Program.cs to configure MudForge's theming services:
