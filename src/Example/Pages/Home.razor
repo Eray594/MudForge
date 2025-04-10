@@ -1,0 +1,6 @@
+﻿@page "/"
+@inject MudThemeService ThemeService
+<MudButton StartIcon="@(ThemeService.IsDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)" OnClick="ThemeService.ToggleAsync">
+    Toggle to @(ThemeService.IsDarkMode ? "LightMode" : "DarkMode")
+</MudButton>
+

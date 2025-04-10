@@ -1,7 +1,7 @@
+using Example;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor;
-using ThemeExample;
 using MudBlazor.Services;
 using MudForge.Theming;
 
@@ -11,12 +11,14 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddMudServices();
-
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
-    IsDarkMode = Resources.IsDarkMode,
-    LocalStorageKey = Resources.LocalStorageKey,
-    Theme = Resources.Theme,
+    IsDarkMode = true,
+    LocalStorageKey = "theme_mode",
+    Theme = new MudTheme()
 });
+var host = builder.Build();
+var mudThemeService = host.Services.GetRequiredService<MudThemeService>();
+await mudThemeService.LoadUserPreferenceAsync();
 
-await builder.Build().RunAsync();
+await host.RunAsync();

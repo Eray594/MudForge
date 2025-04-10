@@ -1,4 +1,5 @@
-﻿@inject MudThemeService ThemeService
+﻿@using MudForge.Theming
+@inject MudThemeService ThemeService
 
 <MudThemeProvider Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.IsDarkMode"/>
 <MudDialogProvider/>
@@ -10,7 +11,7 @@
         <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
     </Found>
     <NotFound>
-        <PageTitle>Not Found</PageTitle>
+        <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
             <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
@@ -18,8 +19,6 @@
 </Router>
 
 @code {
-
     protected override void OnInitialized()
         => ThemeService.OnThemeChanged += StateHasChanged;
-
 }
