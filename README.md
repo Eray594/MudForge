@@ -31,13 +31,7 @@ dotnet add package MudForge.WebAssembly
 
 ---
 
-
-### **Using Visual Studio/Rider**
-1. Right-click your project in **Solution Explorer**.
-2. Select **Manage NuGet Packages**.
-3. Search for **MudForge** and click **Install**.
-
----
+# 💻 **WebAssembly**
 
 ## 👋 **Getting Started**
 
