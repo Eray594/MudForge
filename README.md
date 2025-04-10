@@ -36,7 +36,7 @@ dotnet add package MudForge.WebAssembly
 ### **1. Theming Setup**
 Add the following lines to Program.cs to configure MudForge's theming services:
 
-csharp
+```csharp
 // Import the namespace for MudForge and WebAssembly
 using MudForge.WebAssembly.Theming;
 
@@ -60,7 +60,7 @@ await mudThemeService.LoadUserPreferenceAsync();
 
 // Run the Blazor application
 await builder.Build().RunAsync();
-
+```
 
 > [!NOTE]  
 > The LocalStorageKey stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
