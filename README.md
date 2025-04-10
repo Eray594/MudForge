@@ -40,8 +40,7 @@ Add the following lines to Program.cs to configure MudForge's theming services:
 // Import the namespace for MudForge and WebAssembly
 using MudForge.WebAssembly.Theming;
 
-// Create the WebAssembly host builder
-var builder = WebAssemblyHostBuilder.CreateDefault(args);
+...
 
 // Add the MudForge Theming Service
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
