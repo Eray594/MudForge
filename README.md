@@ -69,7 +69,7 @@ await builder.Build().RunAsync();
 ### **2. Configure Components**
 Modify your components using the MudThemeService by adding the following code to App.razor or MainLayout.razor:
 
-razor
+```razor
 @inject MudThemeService ThemeService
 
 <MudThemeProvider Theme="ThemeService.Theme" @bind-IsDarkMode="ThemeService.IsDarkMode"/>
@@ -80,6 +80,7 @@ razor
     protected override void OnInitialized()
         => ThemeService.OnThemeChanged += StateHasChanged;
 }
+```
 
 This ensures that your components dynamically adapt to theme changes managed by the MudThemeService.
 
@@ -91,10 +92,10 @@ This ensures that your components dynamically adapt to theme changes managed by 
 ### **3. Toggle Between Light and Dark Mode** 🌞🌑
 With the ToggleAsync method in **MudThemeService**, you can easily switch between **Light and Dark Mode**:
 
-razor
+```razor
 @inject MudThemeService ThemeService
 <MudButton OnClick="ThemeService.ToggleAsync">Toggle Theme</MudButton>
-
+```
 > [!NOTE]  
 > The selected theme is automatically stored in the **localStorage**, so the user’s preference is preserved even after a page reload or restart of the application.
 
