@@ -31,27 +31,36 @@ dotnet add package MudForge.WebAssembly
 
 ---
 
-# 💻 **WebAssembly**
-
 ## 👋 **Getting Started**
 
 ### **1. Theming Setup**
 Add the following lines to Program.cs to configure MudForge's theming services:
 
 csharp
-using MudForge.Theming;
+// Import the namespace for MudForge and WebAssembly
+using MudForge.WebAssembly.Theming;
 
+// Create the WebAssembly host builder
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-// Add MudForge Theming Service
+// Add the MudForge Theming Service
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
-    IsDarkMode = true, // Default theme set to Dark Mode
-    LocalStorageKey = "theme_mode", // Stores user preference in localStorage
-    Theme = new MudTheme() // Provide MudBlazor theme configuration
+    IsDarkMode = true, // Set the default theme to Dark Mode
+    LocalStorageKey = "theme_mode", // Store the user's theme preference in localStorage
+    Theme = new MudTheme() // Provide the MudBlazor theme configuration
 });
 
+// Build the host and get the MudThemeService from DI
+var host = builder.Build();
+var mudThemeService = host.Services.GetRequiredService<MudThemeService>();
+
+// Load the user's theme preference (Dark or Light Mode) from localStorage
+await mudThemeService.LoadUserPreferenceAsync();
+
+// Run the Blazor application
 await builder.Build().RunAsync();
+
 
 > [!NOTE]  
 > The LocalStorageKey stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
