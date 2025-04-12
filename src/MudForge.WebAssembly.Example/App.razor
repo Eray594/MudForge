@@ -18,7 +18,8 @@
 </Router>
 
 @code {
-    protected override void OnInitialized() => ThemeService.OnThemeChanged += StateHasChanged;
 
+    protected override void OnInitialized()
+        => ThemeService.OnThemeChanged += StateHasChanged;
 
 }

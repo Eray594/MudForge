@@ -7,13 +7,3 @@
         Toggle to @(ThemeService.IsDarkMode ? "LightMode" : "DarkMode")
     </MudButton>
 </div>
-
-@code {
-
-    protected override Task OnInitializedAsync()
-    {
-        Console.WriteLine(ThemeService.IsDarkMode);
-        return base.OnInitializedAsync();
-    }
-
-}
