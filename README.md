@@ -8,55 +8,66 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 
 
 ## 🎨 **Features**
-- ✅**Theming**: Simplified implementation of the MudBlazor theming system.
-- ❌**Localization (Coming Soon)**: Provides easy-to-use services for managing multiple languages in Blazor applications.
-
+- ✅ **Theming**: Simplified implementation of the MudBlazor theming system.
+- ✅ **WebAssembly**: Full support for theming in **Blazor WebAssembly** applications using **`localStorage`** for theme persistence.
+- ❌ **Server-Side** (Coming Soon): Server-side theming with **Cookies** for persistent theme preference.
 ---
 
 > [!WARNING]  
 > Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
 
 ## 📦 **Installation**
-
-### **Using .NET CLI**
+### **Using .NET CLI (WebAssembly)**
 ```bash
-dotnet add package MudForge
+dotnet add package MudForge.WebAssembly
 ```
+> ⚠️ **For Server Version**: The server-side version is **Coming Soon**.  
+> At the moment, only **MudForge.WebAssembly** is available for integration.
 
 ### **Using Visual Studio/Rider**
 1. Right-click your project in **Solution Explorer**.
 2. Select **Manage NuGet Packages**.
-3. Search for **MudForge** and click **Install**.
+3. Search for **MudForge.WebAssembly** and click **Install**.
 
 ---
 
-## 👋 **Getting Started**
+## 👋 **Getting Started (WebAssembly)**
 
 ### **1. Theming Setup**
-Add the following lines to `Program.cs` to configure MudForge's theming services:
+Add the following lines to Program.cs to configure MudForge's theming services:
 
 ```csharp
-using MudForge.Theming;
+// Import the namespace for MudForge and WebAssembly
+using MudForge.WebAssembly.Theming;
 
-var builder = WebAssemblyHostBuilder.CreateDefault(args);
+...
 
-// Add MudForge Theming Service
+// Add the MudForge Theming Service
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
-    IsDarkMode = true, // Default theme set to Dark Mode
-    LocalStorageKey = "theme_mode", // Stores user preference in localStorage
-    Theme = new MudTheme() // Provide MudBlazor theme configuration
+    IsDarkMode = true, // Set the default theme to Dark Mode
+    LocalStorageKey = "theme_mode", // Store the user's theme preference in localStorage
+    Theme = new MudTheme() // Provide the MudBlazor theme configuration
 });
 
+// Build the host and get the MudThemeService from DI
+var host = builder.Build();
+var mudThemeService = host.Services.GetRequiredService<MudThemeService>();
+
+// Load the user's theme preference (Dark or Light Mode) from localStorage
+await mudThemeService.LoadUserPreferenceAsync();
+
+// Run the Blazor application
 await builder.Build().RunAsync();
 ```
+
 > [!NOTE]  
-> The `LocalStorageKey` stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
+> The LocalStorageKey stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
 
 ---
 
 ### **2. Configure Components**
-Modify your components using the `MudThemeService` by adding the following code to `App.razor` or `MainLayout.razor`:
+Modify your components using the MudThemeService by adding the following code to App.razor or MainLayout.razor:
 
 ```razor
 @inject MudThemeService ThemeService
@@ -70,15 +81,16 @@ Modify your components using the `MudThemeService` by adding the following code 
         => ThemeService.OnThemeChanged += StateHasChanged;
 }
 ```
+
 This ensures that your components dynamically adapt to theme changes managed by the MudThemeService.
 
 > [!NOTE]  
-> It does not matter whether the MudBlazor components are placed in `App.razor` or `MainLayout.razor`, as long as the service specifies the configuration.
+> It does not matter whether the MudBlazor components are placed in App.razor or MainLayout.razor, as long as the service specifies the configuration.
 
 ---
 
 ### **3. Toggle Between Light and Dark Mode** 🌞🌑
-With the `ToggleAsync` method in **MudThemeService**, you can easily switch between **Light and Dark Mode**:
+With the ToggleAsync method in **MudThemeService**, you can easily switch between **Light and Dark Mode**:
 
 ```razor
 @inject MudThemeService ThemeService
@@ -91,4 +103,3 @@ With the `ToggleAsync` method in **MudThemeService**, you can easily switch betw
 
 ## 🎯 **Conclusion**
 MudForge provides a **simple yet powerful** way to implement theming in Blazor applications using MudBlazor. The library is **flexible, customizable**, and integrates **seamlessly** into existing Blazor projects. The theme preference is stored persistently in the **localStorage**, ensuring a consistent user experience across sessions.
-
