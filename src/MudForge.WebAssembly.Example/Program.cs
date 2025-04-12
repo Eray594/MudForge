@@ -13,7 +13,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddMudServices();
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
-    IsDarkMode = true,
+    IsDarkMode = false,
     LocalStorageKey = "IsDarkMode",
     Theme = new MudTheme()
 });
