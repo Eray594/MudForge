@@ -18,6 +18,8 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 
 ## 🧪 **Example**
 
+https://github.com/user-attachments/assets/e150d0c7-2a23-4719-81aa-d3b20711ed91
+
 ---
 
 ## 📦 **Installation**
