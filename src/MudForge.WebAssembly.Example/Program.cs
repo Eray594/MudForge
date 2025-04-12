@@ -20,4 +20,5 @@ builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 var host = builder.Build();
 var mudThemeService = host.Services.GetRequiredService<MudThemeService>();
 await mudThemeService.LoadUserPreferenceAsync();
-await builder.Build().RunAsync();
+
+await host.RunAsync();
