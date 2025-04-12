@@ -46,8 +46,8 @@ using MudForge.WebAssembly.Theming;
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
     IsDarkMode = true, // Set the default theme to Dark Mode
-    LocalStorageKey = "theme_mode", // Store the user's theme preference in localStorage
-    Theme = new MudTheme() // Provide the MudBlazor theme configuration
+    LocalStorageKey = "isDarkMode", // Store the user's theme preference in localStorage
+    Theme = new MudTheme() // Provide the MudBlazor theme configuration – in our case, the default
 });
 
 // Build the host and get the MudThemeService from DI
@@ -58,7 +58,7 @@ var mudThemeService = host.Services.GetRequiredService<MudThemeService>();
 await mudThemeService.LoadUserPreferenceAsync();
 
 // Run the Blazor application
-await builder.Build().RunAsync();
+await host.RunAsync();
 ```
 
 > [!NOTE]  
