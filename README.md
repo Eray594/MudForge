@@ -14,7 +14,7 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 ---
 
 > [!WARNING]  
-> Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation#using-templates
+> Before using MudForge, ensure that **MudBlazor** is successfully installed in your project. https://mudblazor.com/getting-started/installation
 
 ## 🧪 **Example**
 The following example demonstrates how to toggle between Light and Dark Mode using MudThemeService.
