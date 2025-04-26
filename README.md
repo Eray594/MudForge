@@ -72,6 +72,18 @@ await host.RunAsync();
 > [!NOTE]  
 > The LocalStorageKey stores the user's selected theme (Dark or Light mode) in the **browser's localStorage**, ensuring that the theme persists across sessions.
 
+## 🌓 MudDefaultThemeMode
+
+`MudDefaultThemeMode` defines the behavior of the initial theme selection when no theme preference is stored in **localStorage**.
+
+It controls which theme is automatically applied on the first visit (or when no saved user preference exists).
+
+| Value | Behavior |
+|:--|:--|
+| **Light** | Always start in Light Mode. |
+| **Dark** | Always start in Dark Mode. |
+| **System** | Automatically detect the user's system/browser theme using JavaScript Interop. |
+
 ---
 
 ### **2. Configure Components**
