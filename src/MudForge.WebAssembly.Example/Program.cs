@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor;
 using MudBlazor.Services;
 using MudForge.WebAssembly.Example;
-using MudForge.Webassembly.Theming;
+using MudForge.WebAssembly.Theming;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -13,7 +13,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddMudServices();
 builder.Services.AddMudThemeServices(new MudThemeServiceConfiguration
 {
-    IsDarkMode = false,
+    DefaultThemeMode = MudDefaultThemeMode.System,
     LocalStorageKey = "IsDarkMode",
     Theme = new MudTheme()
 });

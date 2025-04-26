@@ -1,7 +1,8 @@
 using Blazored.LocalStorage;
 using MudBlazor;
+using Microsoft.JSInterop;
 
-namespace MudForge.Webassembly.Theming;
+namespace MudForge.WebAssembly.Theming;
 
 /// <summary>
 /// Manages the application's theme settings, including dark mode state and local storage persistence.
@@ -11,6 +12,7 @@ public class MudThemeService
     private readonly MudThemeServiceConfiguration _configuration;
     private readonly string _localStorageKey;
     private readonly ILocalStorageService _localStorageService;
+    private readonly IJSRuntime _jsRuntime;
 
     /// <summary>
     /// The MudTheme instance defining the application's visual style.
@@ -34,19 +36,24 @@ public class MudThemeService
     public event Action? OnThemeChanged;
 
     /// <summary>
-    /// Creates a new instance of the <see cref="MudThemeService"/> using local storage and configuration.
+    /// Creates a new instance of the <see cref="MudThemeService"/> using local storage, configuration, and JS runtime.
     /// </summary>
-    public MudThemeService(ILocalStorageService localStorageService, MudThemeServiceConfiguration configuration)
+    /// <param name="localStorageService">Service for accessing browser local storage.</param>
+    /// <param name="configuration">Configuration options for the theme service.</param>
+    /// <param name="jsRuntime">JavaScript runtime for interacting with browser APIs.</param>
+    public MudThemeService(ILocalStorageService localStorageService, MudThemeServiceConfiguration configuration,
+        IJSRuntime jsRuntime)
     {
         _localStorageService = localStorageService;
         _configuration = configuration;
         Theme = configuration.Theme;
+        _jsRuntime = jsRuntime;
         _localStorageKey = configuration.LocalStorageKey;
     }
 
     /// <summary>
     /// Initializes the theme setting by checking local storage.
-    /// If no value is found, falls back to the default configuration.
+    /// If no value is found, falls back to the default configuration or system preference.
     /// This method must be called once during application startup.
     /// </summary>
     public async Task LoadUserPreferenceAsync()
@@ -59,13 +66,19 @@ public class MudThemeService
             }
             else
             {
-                IsDarkMode = _configuration.IsDarkMode;
+                IsDarkMode = _configuration.DefaultThemeMode switch
+                {
+                    MudDefaultThemeMode.Light => false,
+                    MudDefaultThemeMode.Dark => true,
+                    MudDefaultThemeMode.System => await GetSystemPreferenceAsync(),
+                    _ => false
+                };
             }
         }
         catch
         {
-            // Fallback to configured default in case of storage access error
-            IsDarkMode = _configuration.IsDarkMode;
+            // Fallback to light theme in case of any error accessing local storage
+            IsDarkMode = false;
         }
 
         OnThemeChanged?.Invoke();
@@ -80,5 +93,24 @@ public class MudThemeService
         IsDarkMode = !IsDarkMode;
         OnThemeChanged?.Invoke();
         await _localStorageService.SetItemAsync(_localStorageKey, IsDarkMode);
+    }
+
+    /// <summary>
+    /// Retrieves the system's preferred color scheme (dark mode) using JavaScript interop.
+    /// If detection fails, defaults to light mode.
+    /// </summary>
+    private async Task<bool> GetSystemPreferenceAsync()
+    {
+        try
+        {
+            return await _jsRuntime.InvokeAsync<bool>(
+                "eval",
+                "window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches"
+            );
+        }
+        catch
+        {
+            return false;
+        }
     }
 }

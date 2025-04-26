@@ -1,25 +1,25 @@
 using MudBlazor;
 
-namespace MudForge.Webassembly.Theming;
+namespace MudForge.WebAssembly.Theming;
 
 /// <summary>
 /// Configuration class for the MudThemeService. 
-/// Stores theme settings, local storage key, and dark mode status.
+/// Defines theming settings such as the visual style, persistence key, and default behavior when no user preference is stored.
 /// </summary>
 public sealed record MudThemeServiceConfiguration
 {
     /// <summary>
-    /// The MudTheme instance defining the application's visual style.
+    /// The MudTheme instance that defines the application's visual appearance (colors, typography, etc.).
     /// </summary>
     public required MudTheme Theme { get; init; }
 
     /// <summary>
-    /// The key used to store the dark mode preference in local storage.
+    /// The key used in local storage to persist the user's theme preference across sessions.
     /// </summary>
     public required string LocalStorageKey { get; init; }
 
     /// <summary>
-    /// The default dark mode setting when no preference is stored.
+    /// Defines the default theme mode (Light, Dark, or System) when no user preference exists.
     /// </summary>
-    public required bool IsDarkMode { get; init; }
+    public required MudDefaultThemeMode DefaultThemeMode { get; init; }
 }
