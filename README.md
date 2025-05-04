@@ -11,6 +11,7 @@ MudForge is an **open-source library** designed to simplify **theming** in Blazo
 - ✅ **Theming**: Simplified implementation of the MudBlazor theming system.
 - ✅ **WebAssembly**: Full support for theming in **Blazor WebAssembly** applications using **`localStorage`** for theme persistence.
 - ❌ **Server-Side** (Coming Soon): Server-side theming with **Cookies** for persistent theme preference.
+- ❌ Localization (Coming Soon): Localization support for both WebAssembly and Server-Side Blazor applications.
 ---
 
 > [!WARNING]  
